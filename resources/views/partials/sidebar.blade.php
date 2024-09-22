@@ -5,7 +5,7 @@
         </figure>
         <div class="info-content">
             <h1 class="name" style="font-size: 24px;" title="Fangki Igo Pramana">Fangki Igo Pramana</h1>
-            <p class="title">Software developer</p>
+            <p class="title">Fullstack Developer</p>
         </div>
         <button class="info_more-btn" data-sidebar-btn>
             <span>Show Contacts</span>
