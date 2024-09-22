@@ -46,17 +46,17 @@
         </ul>
         <div class="separator"></div>
         <ul class="social-list">
-            <li class="social-item">
+            <li class="social-item list-style-none">
                 <a href="#" class="social-link">
                     <ion-icon name="logo-facebook"></ion-icon>
                 </a>
             </li>
-            <li class="social-item">
+            <li class="social-item list-style-none">
                 <a href="#" class="social-link">
                     <ion-icon name="logo-twitter"></ion-icon>
                 </a>
             </li>
-            <li class="social-item">
+            <li class="social-item list-style-none">
                 <a href="instagram.com/fangki_ip" class="social-link">
                     <ion-icon name="logo-instagram"></ion-icon>
                 </a>

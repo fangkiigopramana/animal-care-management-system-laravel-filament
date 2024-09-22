@@ -9,14 +9,14 @@
         <h3 class="h3">Education</h3>
     </div>
     <ol class="timeline-list">
-        <li class="timeline-item">
+        <li class="timeline-item list-style-none">
             <h4 class="h4 timeline-item-title">Diponegoro University - Computer Engineering Bachelor's degree</h4>
             <span>2020 - 2024</span>
             <p class="timeline-text">
                 Coding, Electric, Embeded, and Organization.
             </p>
         </li>
-        <li class="timeline-item">
+        <li class="timeline-item list-style-none">
             <h4 class="h4 timeline-item-title">SMA N 1 Kramat Tegal - Mathematic and Science</h4>
             <span>2017 - 2020</span>
             <p class="timeline-text">
@@ -36,17 +36,13 @@
     </div>
     <ol class="timeline-list">
         @foreach ($experiences as $experience)
-            <li class="timeline-item">
+            <li class="timeline-item list-style-none">
                 <h4 class="h4 timeline-item-title">{{ $experience->job_title }}</h4>
                 <h4 class="h5 timeline-item-title" style="font-weight: 100;">{{ $experience->company_name }}</h4>
                 <span>{{ $experience->start_date }} - {{ $experience->end_date }}</span>
-                <p class="timeline-text">
-                <ol style="color: rgb(190, 189, 189);">
-                    @foreach ($experience->description as $index => $desc)
-                        <li>{{ $loop->iteration . ". " . $desc }}</li>
-                    @endforeach
-                </ol>
-                </p>
+                <div class="timeline-text text-white" style="margin: 0px 20px">
+                    {!! $experience->description !!}
+                </div>
             </li>
         @endforeach
     </ol>

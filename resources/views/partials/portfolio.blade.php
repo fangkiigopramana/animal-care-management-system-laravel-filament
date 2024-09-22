@@ -3,13 +3,13 @@
 </header>
 <section class="projects">
     <ul class="filter-list">
-        <li class="filter-item">
+        <li class="filter-item list-style-none">
             <button class="active" data-filter-btn>All</button>
         </li>
-        <li class="filter-item">
+        <li class="filter-item list-style-none">
             <button data-filter-btn>API</button>
         </li>
-        <li class="filter-item">
+        <li class="filter-item list-style-none">
             <button data-filter-btn>Web</button>
         </li>
     </ul>
@@ -21,13 +21,13 @@
             </div>
         </button>
         <ul class="select-list">
-            <li class="select-item">
+            <li class="select-item list-style-none">
                 <button data-select-item>All</button>
             </li>
-            <li class="select-item">
+            <li class="select-item list-style-none">
                 <button data-select-item>API</button>
             </li>
-            <li class="select-item">
+            <li class="select-item list-style-none">
                 <button data-select-item>Web</button>
             </li>
         </ul>

@@ -23,3 +23,8 @@ Route::get('/', function () {
         'projects' => $projects,
     ]);
 });
+
+
+Route::view('/coba', 'welcome',[
+    'experience' => Experience::find(1)
+]);

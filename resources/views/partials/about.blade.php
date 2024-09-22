@@ -4,8 +4,8 @@
 <section class="about-text">
     <p>
         I am a fresh graduate from Diponegoro University with a degree in Computer Engineering, specializing in
-        <mark class="px-2 text-black font-bold bg-yellow-300 rounded dark:bg-yellow-300">Fullstack Web
-            Development</mark>, particularly with the Laravel framework.
+        <mark class="px-2 text-black bg-yellow-300 rounded dark:bg-yellow-300" style="font-weight: bold">  Fullstack Web
+            Development  </mark>, particularly with the Laravel framework.
         I have honed my skills in various programming languages and frameworks, delivering efficient solutions to
         complex problems. My hands-on experience in web development projects has given me a deep understanding of
         the entire development lifecycle. I am passionate about continuously learning and staying updated with the

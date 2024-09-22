@@ -20,10 +20,16 @@ class Experience extends Model
     {
         return Carbon::createFromFormat('Y-m', $value)->translatedFormat('F Y');
     }
-
-    public function getDescriptionAttribute($value)
+    
+    public function getDurationAttribute($value)
     {
-        return explode('//',$value);
+        
+        return $this->start_date . ' - ' . $this->end_date;
     }
+
+    // public function getDescriptionAttribute($value)
+    // {
+    //     return explode('//',$value);
+    // }
 
 }
