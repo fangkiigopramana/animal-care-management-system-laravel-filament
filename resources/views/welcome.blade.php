@@ -6,11 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kihub - Personal Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -138,7 +140,7 @@
 
         <section class="about-text">
           <p>
-            I am a fresh graduate from Diponegoro University with a degree in Computer Engineering, specializing in Fullstack Web Development, particularly with the Laravel framework.
+            I am a fresh graduate from Diponegoro University with a degree in Computer Engineering, specializing in <mark class="px-2 text-black font-bold bg-yellow-300 rounded dark:bg-yellow-300">Fullstack Web Development</mark>, particularly with the Laravel framework.
             I have honed my skills in various programming languages and frameworks, delivering efficient solutions to complex problems. My hands-on experience in web development projects has given me a deep understanding of the entire development lifecycle. I am passionate about continuously learning and staying updated with the latest industry trends. Currently, I am seeking opportunities to contribute to innovative projects and further develop my skills.
           </p>
         </section>
@@ -305,96 +307,25 @@
           </div>
 
           <ol class="timeline-list">
-
+            @foreach ($experiences as $experience)
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Web Developer Internship</h4>
-              <h4 class="h5 timeline-item-title" style="font-weight: 100;">Tegal Learning Center</h4>
+              <h4 class="h4 timeline-item-title">{{$experience->job_title}}</h4>
+              <h4 class="h5 timeline-item-title" style="font-weight: 100;">{{$experience->company_name}}</h4>
 
-              <span>June 2021 - July 2021</span>
+              <span>{{$experience->start_date}} - {{$experience->end_date}}</span>
 
               <p class="timeline-text">
                 <ol style="color: rgb(190, 189, 189);">
-                  <li>1. Designing the website system requirements for the organization</li>
-                  <li>2. Designing the user interface using Figma software</li>
-                  <li>3. Implementing HTML, JS, and CSS code according to the user interface design</li>
-                  <li>4. Developing and maintaining the website</li>
+                  @foreach ($experience->description as $index => $desc)
+                  <li>{{$loop->iteration.'. '.$desc}}</li>
+                  @endforeach
                 </ol>
               </p>
 
-            </li>
+            </li>          
+            @endforeach
 
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Data Entry</h4>
-              <h4 class="h5 timeline-item-title" style="font-weight: 100;">LPPM Diponegoro University</h4>
-
-              <span>August 2022 - September 2022</span>
-
-              <p class="timeline-text">
-                <ol style="color: rgb(190, 189, 189);">
-                  <li>1. Validate 1000++ lecturer journal data available in spreadsheet form</li>
-                  <li>2. Synchronizing available journal data and data in the SINTA (Science and Technology Index) system</li>
-                  <li>3. Inputting research data of lecturers and students into SINTA (Science and Technology Index) system</li>
-                </ol>
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Backend Web Developer</h4>
-              <h4 class="h5 timeline-item-title" style="font-weight: 100;">PT Kalimas Arubu Indonesia Semarang</h4>
-              <span>December 2022 - February 2023</span>
-              <p class="timeline-text">
-                <ol style="color: rgb(190, 189, 189);">
-                  <li>1. Designing and developing backend systems for web using MySQL</li>
-                  <li>2. Sorting through data for 100+ car types available</li>
-                  <li>3. Performing checks and validation for each car's data</li>
-                  <li>4. Implementing the relationship between model data and car types using Eloquent in Laravel</li>
-                </ol>
-              </p>
-            </li>
-            
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Practice Assistant of Software Engineering Practicum</h4>
-              <h4 class="h5 timeline-item-title" style="font-weight: 100;">Diponegoro University</h4>
-              <span>February 2023 - June 2023</span>
-              <p class="timeline-text">
-                <ol style="color: rgb(190, 189, 189);">
-                  <li>1. Guiding students in preparing Software functional and non-functional Requirement Specification documents</li>
-                  <li>2. Provide students with an understanding of modelling and requirements analysis using diagrams in software design</li>
-                  <li>3. Assist students in understanding object-oriented design techniques using the Unified Modeling Language (UML) in software design</li>
-                </ol>
-              </p>
-            </li>
-            
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Practice Assistant of Database System Practicum</h4>
-              <h4 class="h5 timeline-item-title" style="font-weight: 100%;">Diponegoro University</h4>
-              <span>September 2023 - December 2023</span>
-              <p class="timeline-text">
-                <ol style="color: rgb(190, 189, 189);">
-                  <li>1. Provide students with an understanding of MySQL and Oracle Database</li>
-                  <li>2. Explain and apply the use of Oracle Database in Java EE Netbeans programme</li>
-                </ol>
-              </p>
-            </li>
-            
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Fullstack Web Developer</h4>
-              <h4 class="h5 timeline-item-title" style="font-weight: 100%;">PT ADS Digital Partner Surabaya</h4>
-              <span>February 2024 - June 2024</span>
-              <p class="timeline-text">
-                <ol style="color: rgb(190, 189, 189);">
-                  <li>1. Apply the Agile method in software development</li>
-                  <li>2. Convert the page that has been created by the UI/UX designer into PHP program code using the Laravel framework</li>
-                  <li>3. Integrating the database that has been created by the backend developer into the financing management website</li>
-                  <li>4. Collaborating with other developers in developing the financing management website using GitLab</li>
-                  <li>5. Optimising the performance and efficiency of the website program code using the Laravel Debugbar tool</li>
-                  <li>6. Maintain and test the program code that has been created using PHPUnit and those available in Laravel</li>
-                </ol>
-              </p>
-            </li>            
 
           </ol>
 

@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Experience;
+use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $experiences = Experience::select('company_name','job_title','start_date','end_date','description')->get();
+    $projects = Project::select('name','category','thumbnail_image','demo_url','tech_stacks')->get();
+    return view('layouts.app',[
+        'experiences' => $experiences,
+        'projects' => $projects,
+    ]);
 });
