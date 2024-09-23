@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ProjectResource\Pages;
 use App\Filament\Resources\ProjectResource\RelationManagers;
 use App\Models\Project;
+use App\Models\Technology;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -33,16 +34,12 @@ class ProjectResource extends Resource
                     ])
                     ->required(),
                 Forms\Components\Select::make('tech_stacks')
+                    ->label('Technology')
                     ->multiple()
-                    ->options([
-                        'Tailwind CSS' => 'Tailwind CSS',
-                        'Bootstrap CSS' => 'Tailwind CSS',
-                        'React' => 'Alpine.js',
-                        'Laravel' => 'Laravel',
-                        'Livewire' => 'Laravel Livewire',
-                        'Vue JS' => 'Vue JS',
-                    ])
-                    ->minItems(1),
+                    ->options(Technology::all()->pluck('name','name'))
+                    ->minItems(1)
+                    ->searchable()
+                    ->native(false),
                 Forms\Components\TextInput::make('demo_url')
                     ->required(),
                 Forms\Components\FileUpload::make('thumbnail_image')
