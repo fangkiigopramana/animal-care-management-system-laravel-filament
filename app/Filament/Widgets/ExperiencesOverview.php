@@ -13,7 +13,7 @@ class ExperiencesOverview extends BaseWidget
     {
         return [
             Stat::make('Experiences', Experience::count()),
-            Stat::make('Experiences', Project::count()),
+            Stat::make('Projects', Project::count()),
         ];
     }
 }

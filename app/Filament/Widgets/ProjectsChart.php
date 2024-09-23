@@ -7,7 +7,7 @@ use Filament\Widgets\ChartWidget;
 
 class ProjectsChart extends ChartWidget
 {
-    protected static ?string $heading = 'Chart';
+    protected static ?string $heading = 'Projects By Category';
 
     protected function getData(): array
     {
