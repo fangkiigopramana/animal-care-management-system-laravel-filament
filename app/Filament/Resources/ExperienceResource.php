@@ -18,7 +18,7 @@ class ExperienceResource extends Resource
 {
     protected static ?string $model = Experience::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-briefcase';
 
     public static function form(Form $form): Form
     {
@@ -30,13 +30,13 @@ class ExperienceResource extends Resource
                 Forms\Components\TextInput::make('job_title')
                     ->required()
                     ->maxLength(255),
-                    Forms\Components\DatePicker::make('start_date')
+                Forms\Components\DatePicker::make('start_date')
                     ->required()
                     ->format('Y-m')
-                    ->afterOrEqual('01-01-1900') 
-                    ->reactive() 
+                    ->afterOrEqual('01-01-1900')
+                    ->reactive()
                     ->afterStateUpdated(function (callable $set, $state) {
-                        $set('end_date', null); 
+                        $set('end_date', null);
                     }),
                 Forms\Components\DatePicker::make('end_date')
                     ->required()
@@ -93,5 +93,10 @@ class ExperienceResource extends Resource
             'create' => Pages\CreateExperience::route('/create'),
             'edit' => Pages\EditExperience::route('/{record}/edit'),
         ];
+    }
+ 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
     }
 }

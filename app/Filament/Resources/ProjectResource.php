@@ -18,7 +18,7 @@ class ProjectResource extends Resource
 {
     protected static ?string $model = Project::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-rocket-launch';
 
     public static function form(Form $form): Form
     {
@@ -36,7 +36,7 @@ class ProjectResource extends Resource
                 Forms\Components\Select::make('tech_stacks')
                     ->label('Technology')
                     ->multiple()
-                    ->options(Technology::all()->pluck('name','name'))
+                    ->options(Technology::all()->pluck('name', 'name'))
                     ->minItems(1)
                     ->searchable()
                     ->native(false),
@@ -98,5 +98,10 @@ class ProjectResource extends Resource
             'create' => Pages\CreateProject::route('/create'),
             'edit' => Pages\EditProject::route('/{record}/edit'),
         ];
+    }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
     }
 }
