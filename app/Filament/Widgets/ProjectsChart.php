@@ -24,9 +24,9 @@ class ProjectsChart extends ChartWidget
                 [
                     'label' => 'Projects By Category',
                     'data' => $data,
-                    'background color' => [
-                        'rgb(255, 99, 132)',
-                        'rgb(54, 162, 235)',
+                    'backgroundColor' => [
+                        '#fdae4b',
+                        '#6e6df7',
                     ],
                 ],
             ],
