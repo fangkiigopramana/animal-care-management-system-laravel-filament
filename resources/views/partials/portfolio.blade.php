@@ -40,7 +40,7 @@
                         <div class="project-item-icon-box">
                             <ion-icon name="eye-outline"></ion-icon>
                         </div>
-                        <img src="{{ asset("/assets/images/" . $project->thumbnail_image) }}"
+                        <img src="{{ asset("/storage" . str_replace('public', '', $project->thumbnail_image)) }}"
                             alt="{{ $project->name . " Image" }}" loading="lazy">
                     </figure>
                     <h3 class="project-title">{{ $project->name }}</h3>
