@@ -1,8 +1,10 @@
 <?php
 
+use App\Exports\ExperienceExport;
 use App\Models\Experience;
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +26,6 @@ Route::get('/', function () {
     ]);
 });
 
-
-Route::view('/coba', 'welcome',[
-    'experience' => Experience::find(1)
-]);
+Route::get('/excel',function(){
+    return Excel::download(new ExperienceExport, 'users.xlsx');
+});
